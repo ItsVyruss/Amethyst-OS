@@ -331,3 +331,14 @@ actions:
 
   - !file:
     path: "%ProgramW6432%\\PCHealthCheck"
+
+   # ---------- NVIDIA Container --- uses 200MB+ of memory, none of the features are even being used on optimized machines.
+  - !writeStatus: {status: 'Disabling NVIDIA Telemetry'}
+
+  - !run: {exe: 'sc.exe', args: 'stop NvTelemetryContainer'}
+
+  - !run: {exe: 'sc.exe', args: 'config NvTelemetryContainer start= disabled'}
+
+  - !run: {exe: 'sc.exe', args: 'stop NvContainerLocalSystem'}
+
+  - !run: {exe: 'sc.exe', args: 'config NvContainerLocalSystem start= disabled'}
