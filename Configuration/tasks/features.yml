@@ -1,13 +1,15 @@
 title: Features
 actions:
-  - !writeStatus: {status: 'Features Disabling'}
-  - !run: {exe: 'DISM.exe', args: '/Online /Remove-Capability /CapabilityName:"App.StepsRecorder~~~~0.0.1.0" /NoRestart'}
-  - !run: {exe: 'DISM.exe', args: '/Online /Disable-Feature /FeatureName:"MediaPlayback" /NoRestart'}
-  - !run: {exe: 'DISM.exe', args: '/Online /Disable-Feature /FeatureName:"Workfolders-client" /NoRestart'}
-  - !run: {exe: 'DISM.exe', args: '/Online /Disable-Feature /FeatureName:"SMBDirect" /NoRestart'}
-  - !run: {exe: 'DISM.exe', args: '/Online /Disable-Feature /FeatureName:"Workfolders-client" /NoRestart'}
-  - !run: {exe: 'DISM.exe', args: '/Online /Disable-Feature /FeatureName:"Workfolders-client" /NoRestart'}
-  - !run: {exe: 'DISM.exe', args: '/Online /Disable-Feature /FeatureName:"Printing-PrintToPDFServices-Features" /NoRestart'}
-  - !run: {exe: 'DISM.exe', args: '/Online /Disable-Feature /FeatureName:"Printing-Foundation-Features" /NoRestart'}
-  - !run: {exe: 'DISM.exe', args: '/Online /Disable-Feature /FeatureName:"Printing-Foundation-InternetPrinting-Client" /NoRestart'}
-  - !run: {exe: 'DISM.exe', args: '/Online /Set-ReservedStorageState /State:Disabled'}
+  - !writeStatus: {status: 'Disabling Optional Features'}
+
+  # Disable legacy SMB 1.0 support
+  - !run: {exe: 'DISM.exe', args: '/Online /Disable-Feature /FeatureName:SMB1Protocol /NoRestart'}
+
+  # Disable the legacy Telnet client
+  - !run: {exe: 'DISM.exe', args: '/Online /Disable-Feature /FeatureName:TelnetClient /NoRestart'}
+
+  # Disable the legacy TFTP client
+  - !run: {exe: 'DISM.exe', args: '/Online /Disable-Feature /FeatureName:TFTP /NoRestart'}
+
+  # Disable legacy PowerShell 2.0
+  - !run: {exe: 'DISM.exe', args: '/Online /Disable-Feature /FeatureName:MicrosoftWindowsPowerShellV2Root /NoRestart'}
