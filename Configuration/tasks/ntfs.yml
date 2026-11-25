@@ -1,0 +1,5 @@
+title: Ntfs
+actions:
+  - !run: {exe: 'fsutil', args: 'behavior set disablecompression 1'}
+  - !run: {exe: 'fsutil', args: 'behavior set encryptpagingfile 0'}
+  - !run: {exe: 'fsutil', args: 'behavior set DisableEncryption 1'}

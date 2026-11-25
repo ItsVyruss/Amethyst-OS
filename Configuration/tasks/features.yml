@@ -1,0 +1,13 @@
+title: Features
+actions:
+  - !writeStatus: {status: 'Features Disabling'}
+  - !run: {exe: 'DISM.exe', args: '/Online /Remove-Capability /CapabilityName:"App.StepsRecorder~~~~0.0.1.0" /NoRestart'}
+  - !run: {exe: 'DISM.exe', args: '/Online /Disable-Feature /FeatureName:"MediaPlayback" /NoRestart'}
+  - !run: {exe: 'DISM.exe', args: '/Online /Disable-Feature /FeatureName:"Workfolders-client" /NoRestart'}
+  - !run: {exe: 'DISM.exe', args: '/Online /Disable-Feature /FeatureName:"SMBDirect" /NoRestart'}
+  - !run: {exe: 'DISM.exe', args: '/Online /Disable-Feature /FeatureName:"Workfolders-client" /NoRestart'}
+  - !run: {exe: 'DISM.exe', args: '/Online /Disable-Feature /FeatureName:"Workfolders-client" /NoRestart'}
+  - !run: {exe: 'DISM.exe', args: '/Online /Disable-Feature /FeatureName:"Printing-PrintToPDFServices-Features" /NoRestart'}
+  - !run: {exe: 'DISM.exe', args: '/Online /Disable-Feature /FeatureName:"Printing-Foundation-Features" /NoRestart'}
+  - !run: {exe: 'DISM.exe', args: '/Online /Disable-Feature /FeatureName:"Printing-Foundation-InternetPrinting-Client" /NoRestart'}
+  - !run: {exe: 'DISM.exe', args: '/Online /Set-ReservedStorageState /State:Disabled'}

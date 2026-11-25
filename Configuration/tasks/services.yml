@@ -1,0 +1,56 @@
+title: Services
+description: Modifies Windows services
+privilege: TrustedInstaller
+actions:
+  - !service: {name: 'acpipagr', operation: change, startup: 4}
+  - !service: {name: 'AcpiPmi', operation: change, startup: 4}
+  - !service: {name: 'acpitime', operation: change, startup: 4}
+  - !service: {name: 'bam', operation: change, startup: 4}
+  - !service: {name: 'dam', operation: change, startup: 4}
+  - !service: {name: 'WmiAcpi', operation: change, startup: 4}
+  - !service: {name: 'diagnosticshub.standardcollector.service', operation: change, startup: 4}
+  - !service: {name: 'diagtrack', operation: change, startup: 4}
+  - !service: {name: 'diagsvc', operation: change, startup: 4}
+  - !service: {name: 'dps', operation: change, startup: 4}
+  - !service: {name: 'dusmsvc', operation: change, startup: 4}
+  - !service: {name: 'DSSvc', operation: change, startup: 4}
+  - !service: {name: 'GpuEnergyDrv', operation: change, startup: 4}
+  - !service: {name: 'intelpmt', operation: change, startup: 4}
+  - !service: {name: 'kdnic', operation: change, startup: 4}
+  - !service: {name: 'ndu', operation: change, startup: 4}
+  - !service: {name: 'pcasvc', operation: change, startup: 4}
+  - !service: {name: 'pla', operation: change, startup: 4}
+  - !service: {name: 'PRM', operation: change, startup: 4}
+  - !service: {name: 'svsvc', operation: change, startup: 4}
+  - !service: {name: 'Telemetry', operation: change, startup: 4}
+  - !service: {name: 'troubleshootingsvc', operation: change, startup: 4}
+  - !service: {name: 'WdiServiceHost', operation: change, startup: 4}
+  - !service: {name: 'WdiSystemHost', operation: change, startup: 4}
+  - !service: {name: 'Wecsvc', operation: change, startup: 4}
+  - !service: {name: 'wercplsupport', operation: change, startup: 4}
+  - !service: {name: 'WerSvc', operation: change, startup: 4}
+  - !service: {name: 'wmiApSrv', operation: change, startup: 4}
+  - !service: {name: 'umbus', operation: change, startup: 4}
+  - !service: {name: 'CompositeBus', operation: change, startup: 4}
+  - !service: {name: 'Themes', operation: change, startup: 4}
+  - !service: {name: 'SysMain', operation: change, startup: 4}
+  - !service: {name: 'edgeupdate', operation: change, startup: 4}
+  - !service: {name: 'Spooler', operation: change, startup: 4}
+  - !service: {name: 'SensorService', operation: change, startup: 4}
+  - !service: {name: 'lfsvc', operation: change, startup: 4}
+  - !service: {name: 'lmhosts', operation: change, startup: 4}
+  - !service: {name: 'QWAVE', operation: change, startup: 4} 
+  - !service: {name: 'WSAIFabricSvc', operation: change, startup: 4}
+  - !service: {name: 'BDESVC', operation: change, startup: 4}
+  - !service: {name: 'CldFlt', operation: change, startup: 4}
+  - !service: {name: 'UCPD', operation: change, startup: 4}
+  - !service: {name: 'onesyncsvc', operation: change, startup: 4}
+  - !service: {name: 'ShellHWDetection', operation: change, startup: 4}
+  - !service: {name: 'Beep', operation: change, startup: 4}
+  - !service: {name: 'CloudIdSvc', operation: change, startup: 4}
+  - !service: {name: 'WPCMonSvc', operation: change, startup: 4}
+  - !service: {name: 'MapsBroker', operation: change, startup: 4}
+  - !service: {name: 'CloudBackupRestoreSvc', operation: change, startup: 4}
+  - !service: {name: 'fhsvc', operation: change, startup: 4}
+  - !service: {name: 'semgrsvc', operation: change, startup: 4}
+  - !service: {name: 'wisvc', operation: change, startup: 4}

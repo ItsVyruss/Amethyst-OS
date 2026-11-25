@@ -1,0 +1,13 @@
+title: Branding
+actions:
+- !writeStatus: { status: 'Configurating Branding' }
+- !registryValue: { path: 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion', value: 'EditionSubVersion', type: REG_SZ, data: 'Amethyst' }
+- !registryValue: { path: 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion', value: 'RegisteredOrganization', type: REG_SZ, data: 'Amethyst' }
+- !registryValue: { path: 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion', value: 'RegisteredOwner', type: REG_SZ, data: 'Amethyst' }
+- !registryValue: { path: 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion', value: 'DisplayVersion', type: REG_SZ, data: 'Amethyst' }
+- !registryValue: { path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation', value: 'Manufacturer', type: REG_SZ, data: 'Amethyst' }
+- !registryValue: { path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation', value: 'Model', type: REG_SZ, data: 'Amethyst' }
+- !registryValue: { path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation', value: 'SupportURL', type: REG_SZ, data: 'https://discord.gg/p6JH3mMFvZ' }
+- !run: { exe: 'bcdedit', args: '/set {current} description "Amethyst"' }
+- !run: { exe: 'label', args: '%systemdrive% Amethyst' }
+- !powerShell: { command: "if ((Get-CimInstance Win32_ComputerSystem).Name -ne 'Amethyst-PC') { Rename-Computer -NewName 'Amethyst-PC' -Force }", runas: currentUserElevated, wait: true }

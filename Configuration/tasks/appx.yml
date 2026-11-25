@@ -1,0 +1,43 @@
+title: APPX
+description: Removal of certain Windows apps
+privilege: TrustedInstaller
+actions:
+  - !status: {status: 'Removing APPX packages'}
+  - !appx: {name: '*3DViewer*', type: family}
+  - !appx: {name: '*Clipchamp*', type: family}
+  - !appx: {name: '*Disney*', type: family}
+  - !appx: {name: '*FeedbackHub*', type: family}
+  - !appx: {name: '*Getstarted*', type: family}
+  - !appx: {name: '*Microsoft.Microsoft3DViewer*', type: family}
+  - !appx: {name: '*Microsoft.MicrosoftOfficeHub*', type: family}
+  - !appx: {name: '*Microsoft.MicrosoftSolitaireCollection*', type: family}
+  - !appx: {name: '*Microsoft.Sway*', type: family}
+  - !appx: {name: '*Microsoft.ZuneMusic*', type: family}
+  - !appx: {name: '*Microsoft.ZuneVideo*', type: family}
+  - !appx: {name: '*Spotify*', type: family}
+  - !appx: {name: '*Microsoft.GetHelp*', type: family}
+  - !appx: {name: '*Microsoft.Messaging*', type: family}
+  - !appx: {name: '*Microsoft.OneConnect*', type: family}
+  - !appx: {name: '*Microsoft.People*', type: family}
+  - !appx: {name: '*Microsoft.Todos*', type: family}
+  - !appx: {name: '*Microsoft.WindowsAlarms*', type: family}
+  - !appx: {name: '*MicrosoftTeams*', type: family}
+  - !appx: {name: '*MSTeams*', type: family}
+  - !appx: {name: '*OneNote*', type: family}
+  - !appx: {name: '*OutlookForWindows*', type: family}
+  - !appx: {name: '*PowerAutomate*', type: family}
+  - !appx: {name: '*QuickAssist*', type: family}
+  - !appx: {name: '*SkypeApp*', type: family}
+  - !appx: {name: '*Sway*', type: family}
+  - !appx: {name: '*Wallet*', type: family}
+  - !appx: {name: '*WindowsCamera*', type: family}
+  - !appx: {name: '*WindowsMaps*', type: family}
+  - !appx: {name: '*WindowsSoundRecorder*', type: family}
+  - !appx: {name: '*YourPhone*', type: family}
+  - !appx: {name: '*WhatsApp*', type: family}
+  - !appx: {name: '*AdobeExpress*', type: family}
+  - !appx: {name: '*LinkedIn*', type: family}
+  - !appx: {name: '*Microsoft.Paint*', type: family}
+  - !appx: {name: '*Microsoft.BingNews*', type: family}
+  - !appx: {name: '*Microsoft.BingWeather*', type: family}
+  - !appx: {name: '*Microsoft.MicrosoftStickyNotes*', type: family}

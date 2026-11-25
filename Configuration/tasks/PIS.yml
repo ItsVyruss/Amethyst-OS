@@ -1,0 +1,6 @@
+title: System Restore Point
+description: Enable System Protection and create a restore point
+privilege: TrustedInstaller
+actions:
+  - !writeStatus: {status: 'Creating System Restore point'}
+  - !cmd: {command: 'powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "& { Enable-ComputerRestore -Drive C:\; Checkpoint-Computer -Description Amethyst_Restore_Point -RestorePointType MODIFY_SETTINGS }"', runas: currentUserElevated, wait: true}

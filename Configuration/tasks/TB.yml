@@ -1,0 +1,6 @@
+title: Taskbar Settings
+description: Show Search as an icon and align taskbar icons left
+privilege: TrustedInstaller
+actions:
+  - !writeStatus: {status: 'Configuring taskbar'}
+  - !cmd: {command: 'powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "$search = ''HKCU:\Software\Microsoft\Windows\CurrentVersion\Search''; $advanced = ''HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced''; New-Item -Path $search -Force | Out-Null; New-Item -Path $advanced -Force | Out-Null; New-ItemProperty -Path $search -Name SearchboxTaskbarMode -PropertyType DWord -Value 1 -Force | Out-Null; New-ItemProperty -Path $advanced -Name TaskbarAl -PropertyType DWord -Value 0 -Force | Out-Null"', runas: currentUserElevated, wait: true}

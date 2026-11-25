@@ -1,0 +1,45 @@
+title: Files
+description: Deletes unnecessary scheduled tasks and files
+privilege: TrustedInstaller
+actions:
+  - !status: {status: 'Removing tasks'}
+  - !scheduledTask:
+    path: "\\Microsoft\\Windows\\Customer Experience Improvement Program\\Consolidator"
+    operation: delete
+  - !scheduledTask:
+    path: "\\Microsoft\\Windows\\Customer Experience Improvement Program\\KernelCeipTask"
+    operation: delete
+  - !scheduledTask:
+    path: "\\Microsoft\\Windows\\Customer Experience Improvement Program\\UsbCeip"
+    operation: delete
+  - !scheduledTask:
+    path: "\\Microsoft\\Windows\\Application Experience\\Microsoft Compatibility Appraiser"
+    operation: delete
+  - !scheduledTask:
+    path: "\\Microsoft\\Windows\\Application Experience\\ProgramDataUpdater"
+    operation: delete
+  - !scheduledTask:
+    path: "\\Microsoft\\Windows\\Application Experience\\StartupAppTask"
+    operation: delete
+  - !scheduledTask:
+    path: "\\Microsoft\\Windows\\Clip\\License Validation"
+    operation: delete
+  - !scheduledTask:
+    path: "\\Microsoft\\Windows\\Customer Experience Improvement Program\\UsbCeip"
+    operation: delete
+  - !scheduledTask:
+    path: "\\Microsoft\\Windows\\HelloFace\\FODCleanupTask"
+    operation: delete
+  - !scheduledTask:
+    path: "\\Microsoft\\Windows\\Maps\\MapsToastTask"
+    operation: delete
+  - !scheduledTask:
+    path: "\\Microsoft\\Windows\\Maps\\MapsUpdateTask"
+    operation: delete
+
+
+  - !status: {status: 'Removing files'}
+  - !file:
+    path: "%ProgramFiles(x86)%\\Windows Mail"
+  - !file:
+    path: "%ProgramW6432%\\Windows Mail"

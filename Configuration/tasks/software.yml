@@ -1,0 +1,17 @@
+title: Software
+actions:
+  - !writeStatus: {status: 'Installing Software'}
+  - !writeStatus: {status: 'Installing Visual C++ Redistributable Runtimes'}
+  - !download: {url: 'https://aka.ms/vs/17/release/vc_redist.x64.exe', destination: '%temp%\2015_2022_64.exe', overwrite: true}
+  - !download: {url: 'https://aka.ms/vs/17/release/vc_redist.x86.exe', destination: '%temp%\2015_2022_86.exe', overwrite: true}
+  - !cmd: {command: '"%temp%\2015_2022_64.exe" /quiet', runas: currentUserElevated, wait: true}
+  - !cmd: {command: '"%temp%\2015_2022_86.exe" /quiet', runas: currentUserElevated, wait: true}
+  
+  - !writeStatus: {status: 'Installing 7-Zip'}
+  - !download: {git: 'https://github.com/ip7z/7zip', regex: '^7z.*-x64\.exe$', destination: '%temp%\7Zip.exe', overwrite: true}
+  - !cmd: {command: '"%temp%\7Zip.exe" /S', runas: currentUserElevated, wait: true}
+
+  - !writeStatus: {status: 'Installing Brave', option: 'brave-browser'}
+  - !download: {url: 'https://laptop-updates.brave.com/latest/winx64', destination: '%temp%\BraveSetup.exe', option: 'brave-browser', overwrite: true}
+  - !cmd: {command: '"%temp%\BraveSetup.exe" /silent /install', runas: currentUserElevated, option: 'brave-browser', wait: true}
+
